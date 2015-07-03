@@ -37,7 +37,7 @@ read -p "Space delimited test files (100MB 1000MB): " -a lg_test_files
 [ -z "$lg_test_files" ] && lg_test_files=(100MB 1000MB)
 lg_test_file_string="[\"$(echo -n ${lg_test_files[*]}| sed 's/ /","/g')\"]"
 
-apt-get update && apt-get install python-pip python-dev virtualenvwrapper git nginx uwsgi mtr traceroute bind9-host uwsgi-plugin-python || (echo "Unable to install requirements" && exit 1)
+apt-get update && apt-get install python-pip python-dev virtualenvwrapper git nginx uwsgi mtr-tiny traceroute bind9-host uwsgi-plugin-python || (echo "Unable to install requirements" && exit 1)
 
 # we force bash to get virtualenvwrapper easily
 useradd -m -s/bin/bash $lg_user || (echo "Unable to add user '$lg_user'" && exit 1)
